@@ -7,7 +7,7 @@ Before migrations run you have to set up db, you can use MYSQL or SQLITE
 To install the software please open a terminal and exec the following commands one by one
 
 ```
-git clone git@github.com/SandroBasta/poker-hand-analyzer.git
+git clone git@github.com:SandroBasta/poker-hand-analyzer.git
 cd poker-hand-analyzer/src
 composer install
 cp .env.example .env
