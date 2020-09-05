@@ -1,0 +1,35 @@
+version: '3.7'
+services:
+    app:
+        build: .
+        image: sandrobasta/poker-hand-analyzer
+        container_name: poker-hand-analyzer-app
+        restart: unless-stopped
+        tty: true
+        stdin_open: true
+        working_dir: /app
+        volumes:
+            - ./src:/app
+    nginx:
+        image: nginx:alpine
+        container_name: poker-hand-analyzer-nginx
+        restart: unless-stopped
+        tty: true
+        stdin_open: true
+        working_dir: /etc/nginx
+        volumes:
+            - ./src:/app
+            - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+            - ./nginx/app.crt:/etc/ssl/certs/app.crt
+            - ./nginx/app.key:/etc/ssl/private/app.key
+        ports:
+            - "9000:80"
+            - "9443:443"
+        depends_on: [app]
+        links:
+            - app
+
+networks:
+    default:
+        name: local-private
+        driver: bridge
