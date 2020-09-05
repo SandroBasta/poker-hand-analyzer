@@ -1,29 +1,34 @@
-## Setup global enviroment
+Analytico is a tool based on PHP and Laravel, whose purpose is only for test. Please do not use in production.
 
-### Create network
+## General setup:
 
-`docker network create local-private`
+Before migrations run you have to set up db, you can use MYSQL or SQLITE
 
-### Database
+To install the software please open a terminal and exec the following commands one by one
 
-#### Creating global container for mysql
+```
+git clone git@github.com/SandroBasta/poker-hand-analyzer.git
+cd poker-hand-analyzer/src
+composer install
+cp .env.example .env
+php artisan key:generate
+touch database/database.sqlite //if you will use sqlite
+php artisan migrate
+```
 
-`docker run -dit --restart unless-stopped --name local-mysql --net local-private -v mysqldata:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=docker -d mariadb:latest`
+## Run 
+```
+php artisan serve
+```
+1. Open your browser and go to http://127.0.0.1:8000
+2. Click on register link on top-right corner and proceed to register a new user
+3. Upload the hands.txt file, click on Submite  button and wait.
 
-##### Creating project database
+## Authentication
+Is based on laravel/ui
+Laravel makes implementing authentication very simple. 
+More here: https://laravel.com/docs/7.x/authentication
 
-`docker exec -it local-mysql mysql -u root -p`
-
-`CREATE DATABASE dogma DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;`
-
-### Redis
-
-`docker run -dit --restart unless-stopped --name local-redis --net local-private -p 6379:6379 redis:alpine`
-
-### Setup enviroment
-
-`docker-compose build --build-arg UID=1000 --build-arg GID=$GID`
-`docker-compose up -d`
-`docker exec -u www-data -it poker-hand-analyzer-app sh`
-
+## Run in Docker env
+please read Docker-readme.md file
 
