@@ -1,4 +1,13 @@
+## Task
+
+1. Upload the file
+2. Parse file into a DB
+3. Have a way to show how many hands Player 1 wins
+4. Authentication
+
+## Solution
 Analytico is a tool based on PHP and Laravel, whose purpose is only for test. Please do not use in production.
+
 
 ## General setup:
 

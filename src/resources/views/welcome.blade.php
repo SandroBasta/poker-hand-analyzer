@@ -6,8 +6,8 @@
 
         <div class="jumbotron p-4 p-md-5 text-white rounded bg-remote-blue">
             <div class="col-md-6 px-0">
-                <h1 class="display-4 font-italic">#analytico</h1>
-                <p class="lead my-3">Your poker tool to analyze a player's winning hand.<br> Player vs Player, upload your
+                <h1 class="display-4 font-italic">Your tool!</h1>
+                <p class="lead my-3">Easy analyze a player's winning hand.<br> Player vs Player, upload your
                     file with the player's hands and we'll do the rest.</p>
             </div>
         </div>
@@ -19,7 +19,7 @@
                     <div class="col p-4 d-flex flex-column position-static">
                         <h3 class="d-inline-block mb-2 text-primary mb-0">Let's get started!</h3>
                         <p class="card-text mb-auto">The file hands.txt, contains 1000 random hands dealt to two
-                            players. Each line of the file contains ten cards (space separated). the first five are
+                            players. Each line of the file contains ten cards (space separated). The first five are
                             Player 1's cards and the last five are Player 2's cards. You can assume that all hands are
                             valid, each player's hand is in no specific order and in each hand there is a clear
                             winner.</p>
@@ -35,3 +35,4 @@
         </div>
     </div>
 @endsection
+

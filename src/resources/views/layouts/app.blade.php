@@ -76,6 +76,7 @@
 
     <main class="py-4">
         @yield('content')
+        @include('partial.footer')
     </main>
 </div>
 </body>

@@ -20,7 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb38983f-1465-479f-9bb7-e38f2c892cb0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/app/Http/Controllers/AnalysisController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Http/Controllers/AnalysisController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/image/ur-logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/image/ur-logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/views/welcome.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +168,7 @@
       <option name="presentableId" value="Default" />
       <updated>1599309841001</updated>
       <workItem from="1599309845353" duration="569000" />
-      <workItem from="1599311188736" duration="2035000" />
+      <workItem from="1599311188736" duration="4438000" />
     </task>
     <servers />
   </component>
@@ -181,5 +185,15 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="100" y="121" width="1720" height="859" key="DiffContextDialog" timestamp="1599313795510">
+      <screen x="0" y="21" width="1920" height="1059" />
+    </state>
+    <state x="100" y="121" width="1720" height="859" key="DiffContextDialog/0.21.1920.1059@0.21.1920.1059" timestamp="1599313795510" />
+    <state x="755" y="472" width="399" height="164" key="NewPhpFileDialog" timestamp="1599336639438">
+      <screen x="0" y="21" width="1920" height="1059" />
+    </state>
+    <state x="755" y="472" width="399" height="164" key="NewPhpFileDialog/0.21.1920.1059@0.21.1920.1059" timestamp="1599336639438" />
   </component>
 </project>
