@@ -71,22 +71,19 @@ class HandProcessor extends PokerRules
                         $playerOne['hand_value'],
                         $playerTwo['hand_value']
                     );
-                    $playerRank = array_search($playerOneRank, $this->rank);
-                    return $this->response($request, $winner, $playerRank);
+                    return $this->response($request, $winner, $playerOneRank);
                 }
                 if ($playerOneRank > $playerTwoRank) {
-                    $playerRank = array_search($playerOneRank, $this->rank);
-                    return $this->response($request, $this->playerOne, $playerRank);
+                    return $this->response($request, $this->playerOne, $playerOneRank);
 
                 } elseif ($playerOneRank < $playerTwoRank) {
-                    $playerRank = array_search($playerTwoRank, $this->rank);
-                    return $this->response($request, $this->playerTwo, $playerRank);
+                    return $this->response($request, $this->playerTwo, $playerTwoRank);
                 }
             }
         }
 
         $winner = $this->processHighCard($request);
-        return $this->response($request, $winner, static::HIGHER_CARD);
+        return $this->response($request, $winner);
     }
 
     /**
@@ -137,11 +134,13 @@ class HandProcessor extends PokerRules
      * @param $playerRank
      * @return array
      */
-    public function response($request, $winner, $playerRank)
+    public function response($request, $winner, $playerRank = null)
     {
+        $playerRank = array_search($playerRank, $this->rank);
+
         return array_merge($request, [
             'winner' => $winner,
-            'rank'   => array_search($playerRank, $this->rank)
+            'rank'   => $playerRank ?? static::HIGHER_CARD
         ]);
     }
 }
