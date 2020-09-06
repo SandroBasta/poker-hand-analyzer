@@ -2,6 +2,8 @@
 
 namespace App\Traits;
 
+use Illuminate\Support\Facades\Log;
+
 /**
  * Trait Cards
  * @package App\Traits
@@ -34,6 +36,7 @@ trait Cards
         foreach ($hand as $k => $v) {
             $value[] = $v[0];
         }
+
         return $this->valueToNumber($value);
     }
     /**

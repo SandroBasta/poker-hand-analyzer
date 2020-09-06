@@ -12,6 +12,8 @@ class PokerRules
 {
     use Cards;
 
+    const ACE = 14;
+
     /**
      * @var int[]
      * rank of hand, biggest rank is royal flush
@@ -43,31 +45,32 @@ class PokerRules
 
         if (in_array(5, $result)) {
 
-            $hand = $this->value($hand);
-
             if ($this->royalFlush($hand) != false) {
-                return $this->rank($this->rank['royal_flush']);
+                return $this->rank($this->rank['royal_flush'], $hand);
             }
             if ($this->straightFlush($hand) != false) {
-                return $this->rank($this->rank['straight_flush']);
+                return $this->rank($this->rank['straight_flush'], $hand);
             }
-            return $this->rank($this->rank['flush']);
+            return $this->rank($this->rank['flush'], $hand);
         }
         return false;
     }
+
     /**
      * @param $hand
      * @return bool
      * Royal Flush function will receive sorted array of 5 cards,
-     * if array start with 10 array is royal flash
+     * Hand is sorted  array and if start with 10 array is royal flash
      */
     public function royalFlush($hand)
     {
+        $hand = $this->value($hand);
         if (reset($hand) == 10) {
             return true;
         }
         return false;
     }
+
     /**
      * @param $hand
      * @return bool
@@ -80,21 +83,36 @@ class PokerRules
         }
         return false;
     }
+
     /**
      * @param $hand
      * @return array|false
      * here we have check if array values are consecutive
-     * we will use algorithm  (max element of array - min element of array + 1) == array.length
-     * if true, then it is consecutive other wise false
      *
      */
     public function straight($hand)
-    {   $hand = $this->value($hand);
-        if ((max($hand) - min($hand) + 1) == count($hand)) {
-           return $this->rank($this->rank['straight']);
+    {
+        $hand = $this->value($hand);
+        $rank = $this->rank($this->rank['straight'], $hand);
+        if (reset($hand) == 10) {
+            // array is sorted, if start with element = 10 is straight
+            return $rank;
         }
-        return false;
+        if (in_array(static::ACE, $hand)) {
+            //we have to take scenario  2,3,4,5,14
+            $hand[array_search(static::ACE, $hand)] = 1;
+            sort($hand);
+        }
+        for ($i = 0; $i < count($hand); $i++) {
+            if ($i > 0) {
+                if ($hand[$i] - $hand[$i - 1] != 1) {
+                    return false;
+                }
+            }
+        }
+        return $rank;
     }
+
     /**
      * @param $hand
      * @return array|false
@@ -107,10 +125,11 @@ class PokerRules
         $hand = $this->value($hand);
         $fullHouse = array_count_values($hand);
         if (in_array(2, $fullHouse) and in_array(3, $fullHouse)) {
-            return $this->rank($this->rank['full_house']);
+            return $this->rank($this->rank['full_house'], $hand);
         }
         return false;
     }
+
     /**
      * @param $hand
      * @return array|false
@@ -123,10 +142,11 @@ class PokerRules
         $hand = $this->value($hand);
         $fourOfKind = array_count_values($hand);
         if (in_array(4, $fourOfKind)) {
-            return $this->rank($this->rank['four_of_kind']);
+            return $this->rank($this->rank['four_of_kind'], $hand);
         }
         return false;
     }
+
     /**
      * @param $hand
      * @return array|false
@@ -139,10 +159,11 @@ class PokerRules
         $hand = $this->value($hand);
         $threeOfAKind = array_count_values($hand);
         if (count($threeOfAKind) == 3 and in_array(3, $threeOfAKind)) {
-            return $this->rank($this->rank['three_of_kind']);
+            return $this->rank($this->rank['three_of_kind'], $hand);
         }
         return false;
     }
+
     /**
      * @param $hand
      * @return array|false
@@ -155,10 +176,11 @@ class PokerRules
         $hand = $this->value($hand);
         $handPairs = array_count_values($hand);
         if (count($handPairs) == 3 and in_array(2, $handPairs)) {
-            return $this->rank($this->rank['two_pair']);
+            return $this->rank($this->rank['two_pair'], $hand);
         }
         return false;
     }
+
     /**
      * @param $hand
      * @return array|false
@@ -171,10 +193,11 @@ class PokerRules
         $hand = $this->value($hand);
         $handPairs = array_count_values($hand);
         if (count($handPairs) == 4 and in_array(2, $handPairs)) {
-            return $this->rank($this->rank['one_pair']);
+            return $this->rank($this->rank['one_pair'], $hand);
         }
         return false;
     }
+
     /**
      * @param $hand
      * @return mixed
@@ -184,14 +207,17 @@ class PokerRules
     {
         return max($this->value($hand));
     }
+
     /**
      * @param $rank
+     * @param $hand
      * @return array
      */
-    public function rank($rank): array
+    public function rank($rank, $hand): array
     {
         return [
-            'rank' => $rank
+            'rank'       => $rank,
+            'hand_value' => $hand
         ];
     }
 }

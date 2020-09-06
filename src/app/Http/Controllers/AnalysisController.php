@@ -4,13 +4,12 @@
 namespace App\Http\Controllers;
 
 use App\Round;
-use App\Services\HandProcessor;
-use App\Services\PokerRules;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Illuminate\Http\Request;
+use App\Services\HandProcessor;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\Foundation\Application;
 
 /**
  * Class AnalysisController
@@ -72,7 +71,7 @@ class AnalysisController extends Controller
     }
 
     /**
-     *
+     * @return Application|Factory|View
      * Now we have easy job just count number of winner rows  where is player 1
      */
     public function show(){
