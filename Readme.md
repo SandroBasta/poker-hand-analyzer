@@ -1,4 +1,7 @@
 ## Task
+The file hands.txt, contains 1000 random hands dealt to two players. Each line of the file contains ten cards (space separated).
+The first five are Player 1's cards and the last five are Player 2's cards. 
+You can assume that all hands are valid, each player's hand is in no specific order and in each hand there is a clear winner.
 
 1. Upload the file
 2. Parse file into a DB
@@ -7,7 +10,6 @@
 
 ## Solution
 Analytico is a tool based on PHP and Laravel, whose purpose is only for test. Please do not use in production.
-
 
 ## General setup:
 

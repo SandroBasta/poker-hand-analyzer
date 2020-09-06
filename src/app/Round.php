@@ -5,11 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-/**
- * Class Hand
- * @package App
- */
-class Hand extends Model
+class Round extends Model
 {
     /**
      * The attributes that aren't mass assignable.

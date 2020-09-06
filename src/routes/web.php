@@ -20,3 +20,4 @@ Route::get('/', function () {
 Auth::routes();
 Route::any('/home', 'HomeController@index')->name('home');
 Route::post('/analysis', 'AnalysisController@index')->name('analysis');
+Route::get('/show', 'AnalysisController@show')->name('show');

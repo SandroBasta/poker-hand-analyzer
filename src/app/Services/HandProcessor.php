@@ -28,18 +28,6 @@ class HandProcessor extends PokerRules
      * @var int
      */
     protected $playerTwo = 2;
-    /**
-     * @var
-     */
-    protected $roundId;
-
-    /**
-     * HandProcessor constructor.
-     */
-    public function __construct()
-    {
-        $this->roundId = time();
-    }
 
     /**
      * @param $playerOneHand
@@ -74,13 +62,11 @@ class HandProcessor extends PokerRules
                 if ($playerOneRank > $playerTwoRank) {
                     return array_merge($array, [
                         'winner'   => $this->playerOne,
-                        'round_id' => $this->roundId,
                         'rank'     => array_search($playerOneRank, $this->rank)
                     ]);
                 } elseif ($playerOneRank < $playerTwoRank) {
                     return array_merge($array, [
                         'winner'   => $this->playerTwo,
-                        'round_id' => $this->roundId,
                         'rank'     => array_search($playerTwoRank, $this->rank)
                     ]);
                 }
@@ -108,7 +94,6 @@ class HandProcessor extends PokerRules
         if ($playerOneCard > $playerTwoCard) {
             return array_merge($array, [
                 'winner'   => $this->playerOne,
-                'round_id' => $this->roundId,
                 'rank'     => $rank
             ]);
         } elseif ($playerOneCard < $playerTwoCard) {
@@ -121,7 +106,7 @@ class HandProcessor extends PokerRules
         // we will not consider in this test
         return array_merge($array, [
             'winner' => 0,
-            'rank'   => $rank
+            'rank'   => $rank,
         ]);
     }
 }
