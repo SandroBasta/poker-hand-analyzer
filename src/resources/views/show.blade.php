@@ -12,7 +12,7 @@
                             </div>
                         @endif
                             @if (isset($count))
-                                <h3 class="font-weight-bold"> Player One wins: {{$count}} times</h3>
+                                <h3 class="font-weight-bold"> Player ONE wins: {{$count}} times</h3>
                             @else
                                 <h3 class="font-weight-bold"> There is no records. Sorry try again.</h3>
                             @endif
