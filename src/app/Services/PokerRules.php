@@ -27,7 +27,8 @@ class PokerRules
         'straight'       => 5,
         'three_of_kind'  => 3,
         'two_pair'       => 2,
-        'one_pair'       => 1
+        'one_pair'       => 1,
+        'higher_card'    => 0
     ];
 
     /**

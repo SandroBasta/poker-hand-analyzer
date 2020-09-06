@@ -9,7 +9,7 @@ namespace App\Services;
 class HandProcessor extends PokerRules
 {
 
-    const HIGHER_CARD = 'higher_card';
+    const HIGHER_CARD_RANK = 0;
 
     /**
      * @var string[]
@@ -83,7 +83,7 @@ class HandProcessor extends PokerRules
         }
 
         $winner = $this->processHighCard($request);
-        return $this->response($request, $winner);
+        return $this->response($request, $winner, static::HIGHER_CARD_RANK);
     }
 
     /**
@@ -134,13 +134,13 @@ class HandProcessor extends PokerRules
      * @param $playerRank
      * @return array
      */
-    public function response($request, $winner, $playerRank = null)
+    public function response($request, $winner, $playerRank)
     {
         $playerRank = array_search($playerRank, $this->rank);
 
         return array_merge($request, [
             'winner' => $winner,
-            'rank'   => $playerRank ?? static::HIGHER_CARD
+            'rank'   => $playerRank
         ]);
     }
 }
