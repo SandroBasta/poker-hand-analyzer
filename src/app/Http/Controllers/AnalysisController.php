@@ -4,6 +4,7 @@
 namespace App\Http\Controllers;
 
 use App\Round;
+use Exception;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Services\HandProcessor;
@@ -20,6 +21,7 @@ class AnalysisController extends Controller
     /**
      * @param Request $request
      * @return RedirectResponse
+     * @throws Exception
      */
     public function index(Request $request)
     {
@@ -33,6 +35,7 @@ class AnalysisController extends Controller
 
     /**
      * @param $file
+     * @throws Exception
      */
     public function proceed($file)
     {

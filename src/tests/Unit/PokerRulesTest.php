@@ -3,6 +3,7 @@
 namespace Tests\Unit;
 
 use App\Services\HandProcessor;
+use Exception;
 use PHPUnit\Framework\TestCase;
 
 class PokerRulesTest extends TestCase
@@ -19,6 +20,7 @@ class PokerRulesTest extends TestCase
 
     /**
      * Test higher card in hand
+     * @throws Exception
      */
     public function testPlayerHighCard(){
 
@@ -29,8 +31,10 @@ class PokerRulesTest extends TestCase
         $analyze = $cards->analyze($playerOneHand, $playerTwoHand);
         $this->assertTrue($analyze['winner'] == 2 and $analyze['rank'] == 'Higher_Card');
     }
+
     /**
      * Test One Pair card in hand
+     * @throws Exception
      */
     public function testPlayerOnePair(){
 
@@ -41,8 +45,10 @@ class PokerRulesTest extends TestCase
         $analyze = $cards->analyze($playerOneHand, $playerTwoHand);
         $this->assertTrue($analyze['winner'] == 1 and $analyze['rank'] == 'One_Pair');
     }
+
     /**
      * Test Two Pair in hand
+     * @throws Exception
      */
     public function testPlayerTwoPair(){
 
@@ -53,8 +59,10 @@ class PokerRulesTest extends TestCase
         $analyze = $cards->analyze($playerOneHand, $playerTwoHand);
         $this->assertTrue($analyze['winner'] == 1 and $analyze['rank'] == 'Two_Pair');
     }
+
     /**
      * Test Two Pair in hand
+     * @throws Exception
      */
     public function testPlayerTwoPairSameHigherCardWin(){
 
@@ -65,8 +73,10 @@ class PokerRulesTest extends TestCase
         $analyze = $cards->analyze($playerOneHand, $playerTwoHand);
         $this->assertTrue($analyze['winner'] == 1  and $analyze['rank'] == 'One_Pair');
     }
+
     /**
      * Test Three of Kind in hand
+     * @throws Exception
      */
     public function testPlayerThreeOfAKind(){
 
@@ -77,8 +87,10 @@ class PokerRulesTest extends TestCase
         $analyze = $cards->analyze($playerOneHand, $playerTwoHand);
         $this->assertTrue($analyze['winner'] == 1 and $analyze['rank'] == 'Three_of_Kind');
     }
+
     /**
      * Test Four of Kind card in hand
+     * @throws Exception
      */
     public function testPlayerFourOfAKind(){
 
@@ -89,8 +101,10 @@ class PokerRulesTest extends TestCase
         $analyze = $cards->analyze($playerOneHand, $playerTwoHand);
         $this->assertTrue($analyze['winner'] == 1 and $analyze['rank'] == 'Four_of_Kind');
     }
+
     /**
      * Test Full House in hand
+     * @throws Exception
      */
     public function testPlayerFullHouse(){
 
@@ -101,8 +115,10 @@ class PokerRulesTest extends TestCase
         $analyze = $cards->analyze($playerOneHand, $playerTwoHand);
         $this->assertTrue($analyze['winner'] == 1 and $analyze['rank'] == 'Full_House');
     }
+
     /**
      * Test Straight  in hand
+     * @throws Exception
      */
     public function testPlayerStraight(){
 
@@ -113,8 +129,10 @@ class PokerRulesTest extends TestCase
         $analyze = $cards->analyze($playerOneHand, $playerTwoHand);
         $this->assertTrue($analyze['winner'] == 1 and $analyze['rank'] == 'Straight');
     }
+
     /**
      * Test higher card in hand
+     * @throws Exception
      */
     public function testPlayerSmallAceStraight(){
 
@@ -125,8 +143,10 @@ class PokerRulesTest extends TestCase
         $analyze = $cards->analyze($playerOneHand, $playerTwoHand);
         $this->assertTrue($analyze['winner'] == 1 and $analyze['rank'] == 'Straight');
     }
+
     /**
      * Test Flush d in hand
+     * @throws Exception
      */
     public function testPlayerFlush(){
 
@@ -137,8 +157,10 @@ class PokerRulesTest extends TestCase
         $analyze = $cards->analyze($playerOneHand, $playerTwoHand);
         $this->assertTrue($analyze['winner'] == 1 and $analyze['rank'] == 'Flush');
     }
+
     /**
      * Test Straight Flush in hand
+     * @throws Exception
      */
     public function testPlayerStraightFlush(){
 
@@ -149,8 +171,10 @@ class PokerRulesTest extends TestCase
         $analyze = $cards->analyze($playerOneHand, $playerTwoHand);
         $this->assertTrue($analyze['winner'] == 1 and $analyze['rank'] == 'Straight_Flush');
     }
+
     /**
      * Test Royal Flush in hand
+     * @throws Exception
      */
     public function testPlayerRoyalFlush(){
 
