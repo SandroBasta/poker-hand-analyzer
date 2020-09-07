@@ -21,12 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="eb38983f-1465-479f-9bb7-e38f2c892cb0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Hand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Round.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Http/Controllers/AnalysisController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Http/Controllers/AnalysisController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Services/HandProcessor.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Services/HandProcessor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Services/PokerRules.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Services/PokerRules.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,6 +168,8 @@
       <workItem from="1599309845353" duration="569000" />
       <workItem from="1599311188736" duration="5179000" />
       <workItem from="1599376587226" duration="8436000" />
+      <workItem from="1599462343213" duration="1872000" />
+      <workItem from="1599468547498" duration="1916000" />
     </task>
     <servers />
   </component>
@@ -203,5 +201,13 @@
       <screen x="0" y="21" width="1920" height="1059" />
     </state>
     <state x="755" y="472" width="399" height="164" key="NewPhpFileDialog/0.21.1920.1059@0.21.1920.1059" timestamp="1599383520475" />
+    <state x="3885" y="0" width="1395" height="1002" maximized="true" key="dock-window-1" timestamp="1599470463078">
+      <screen x="3600" y="0" width="1680" height="1050" />
+    </state>
+    <state x="3885" y="0" width="1395" height="1002" maximized="true" key="dock-window-1/1680.0.1920.1080/3600.0.1680.1050/0.22.1680.1028@1680.0.1920.1080" timestamp="1599470463078" />
+    <state x="3885" y="0" width="1395" height="1002" maximized="true" key="dock-window-2" timestamp="1599470463078">
+      <screen x="3600" y="0" width="1680" height="1050" />
+    </state>
+    <state x="3885" y="0" width="1395" height="1002" maximized="true" key="dock-window-2/1680.0.1920.1080/3600.0.1680.1050/0.22.1680.1028@1680.0.1920.1080" timestamp="1599470463078" />
   </component>
 </project>

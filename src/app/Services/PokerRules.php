@@ -19,16 +19,16 @@ class PokerRules
      * rank of hand, biggest rank is royal flush
      */
     protected $rank = [
-        'royal_flush'    => 10,
-        'straight_flush' => 9,
-        'four_of_kind'   => 8,
-        'full_house'     => 7,
-        'flush'          => 6,
-        'straight'       => 5,
-        'three_of_kind'  => 3,
-        'two_pair'       => 2,
-        'one_pair'       => 1,
-        'higher_card'    => 0
+        'Royal_Flush'    => 10,
+        'Straight_Flush' => 9,
+        'Four_of_Kind'   => 8,
+        'Full_House'     => 7,
+        'Flush'          => 6,
+        'Straight'       => 5,
+        'Three_of_Kind'  => 3,
+        'Two_Pair'       => 2,
+        'One_Pair'       => 1,
+        'Higher_Card'    => 0
     ];
 
     /**
@@ -47,12 +47,12 @@ class PokerRules
         if (in_array(5, $result)) {
 
             if ($this->royalFlush($hand) != false) {
-                return $this->rank($this->rank['royal_flush'], $hand);
+                return $this->rank($this->rank['Royal_Flush'], $hand);
             }
             if ($this->straightFlush($hand) != false) {
-                return $this->rank($this->rank['straight_flush'], $hand);
+                return $this->rank($this->rank['Straight_Flush'], $hand);
             }
-            return $this->rank($this->rank['flush'], $hand);
+            return $this->rank($this->rank['Flush'], $hand);
         }
         return false;
     }
@@ -94,7 +94,7 @@ class PokerRules
     public function straight($hand)
     {
         $hand = $this->value($hand);
-        $rank = $this->rank($this->rank['straight'], $hand);
+        $rank = $this->rank($this->rank['Straight'], $hand);
         if (reset($hand) == 10) {
             // array is sorted, if start with element = 10 is straight
             return $rank;
@@ -126,7 +126,7 @@ class PokerRules
         $hand = $this->value($hand);
         $fullHouse = array_count_values($hand);
         if (in_array(2, $fullHouse) and in_array(3, $fullHouse)) {
-            return $this->rank($this->rank['full_house'], $hand);
+            return $this->rank($this->rank['Full_House'], $hand);
         }
         return false;
     }
@@ -143,7 +143,7 @@ class PokerRules
         $hand = $this->value($hand);
         $fourOfKind = array_count_values($hand);
         if (in_array(4, $fourOfKind)) {
-            return $this->rank($this->rank['four_of_kind'], $hand);
+            return $this->rank($this->rank['Four_of_Kind'], $hand);
         }
         return false;
     }
@@ -160,7 +160,7 @@ class PokerRules
         $hand = $this->value($hand);
         $threeOfAKind = array_count_values($hand);
         if (count($threeOfAKind) == 3 and in_array(3, $threeOfAKind)) {
-            return $this->rank($this->rank['three_of_kind'], $hand);
+            return $this->rank($this->rank['Three_of_Kind'], $hand);
         }
         return false;
     }
@@ -177,7 +177,7 @@ class PokerRules
         $hand = $this->value($hand);
         $handPairs = array_count_values($hand);
         if (count($handPairs) == 3 and in_array(2, $handPairs)) {
-            return $this->rank($this->rank['two_pair'], $hand);
+            return $this->rank($this->rank['Two_Pair'], $hand);
         }
         return false;
     }
@@ -194,7 +194,7 @@ class PokerRules
         $hand = $this->value($hand);
         $handPairs = array_count_values($hand);
         if (count($handPairs) == 4 and in_array(2, $handPairs)) {
-            return $this->rank($this->rank['one_pair'], $hand);
+            return $this->rank($this->rank['One_Pair'], $hand);
         }
         return false;
     }
