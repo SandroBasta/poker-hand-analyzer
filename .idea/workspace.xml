@@ -19,16 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb38983f-1465-479f-9bb7-e38f2c892cb0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Http/Controllers/AnalysisController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Http/Controllers/AnalysisController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Services/HandProcessor.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Services/HandProcessor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/css/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/views/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/views/show.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="eb38983f-1465-479f-9bb7-e38f2c892cb0" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -174,7 +165,7 @@
       <workItem from="1599311188736" duration="5179000" />
       <workItem from="1599376587226" duration="8436000" />
       <workItem from="1599462343213" duration="1872000" />
-      <workItem from="1599468547498" duration="5486000" />
+      <workItem from="1599468547498" duration="5825000" />
     </task>
     <servers />
   </component>

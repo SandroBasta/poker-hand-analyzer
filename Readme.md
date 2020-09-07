@@ -26,7 +26,8 @@ php artisan key:generate
 ## Before migrations run you have to set up db, you can use MYSQL or SQLITE
 
 SQLITE
-update your .env file 
+- update your .env file 
+
 ```
  DB_CONNECTION=sqlite
 ```
