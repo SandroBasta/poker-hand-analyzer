@@ -31,8 +31,11 @@ SQLITE
 ```
  DB_CONNECTION=sqlite
 ```
-create the file where to store data
+- create the file where to store data
+
+```
 touch database/database.sqlite
+```
 
 MYSQL
 - create Database in your local/stage instance 
