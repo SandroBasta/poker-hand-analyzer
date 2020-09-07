@@ -66,3 +66,11 @@ More here: https://laravel.com/docs/7.x/authentication
 ## Run in Docker env
 please read Docker-readme.md file
 
+## Unit Test
+
+We are testing all ranks and hands.
+To proceed with test please open folder in terminal and run:
+```
+cd src
+php artisan test
+```
