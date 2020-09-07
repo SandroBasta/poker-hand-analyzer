@@ -2,6 +2,8 @@
 
 namespace App\Services;
 
+use Exception;
+
 /**
  * Class HandProcessor
  * @package App\Services
@@ -36,9 +38,14 @@ class HandProcessor extends PokerRules
      * @param $playerOneHand
      * @param $playerTwoHand
      * @return array
+     * @throws Exception
      */
     public function analyze($playerOneHand, $playerTwoHand)
     {
+        if (!count($playerOneHand) == 5
+            and count($playerOneHand) == count($playerTwoHand)) {
+          throw new Exception('Players hands is not valid');
+        }
         return $this->processor([
             'player_one_hand' => $playerOneHand,
             'player_two_hand' => $playerTwoHand,

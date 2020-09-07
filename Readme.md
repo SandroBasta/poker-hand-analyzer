@@ -13,8 +13,6 @@ Analytico is a tool based on PHP and Laravel, whose purpose is only for test. Pl
 
 ## General setup:
 
-Before migrations run you have to set up db, you can use MYSQL or SQLITE
-
 To install the software please open a terminal and exec the following commands one by one
 
 ```
@@ -23,17 +21,38 @@ cd poker-hand-analyzer/src
 composer install
 cp .env.example .env
 php artisan key:generate
-touch database/database.sqlite //if you will use sqlite
-php artisan migrate
 ```
 
+## Before migrations run you have to set up db, you can use MYSQL or SQLITE
+
+SQLITE
+update your .env file 
+```
+ DB_CONNECTION=sqlite
+```
+create the file where to store data
+touch database/database.sqlite
+
+MYSQL
+- create Database in your local/stage instance 
+- update .env file 
+```
+DB_CONNECTION=mysql
+DB_HOST=your-host
+DB_PORT=your-port
+DB_DATABASE=your-database-name
+DB_USERNAME=your-username
+```
 ## Run 
 ```
+php artisan migrate
 php artisan serve
 ```
 1. Open your browser and go to http://127.0.0.1:8000
 2. Click on register link on top-right corner and proceed to register a new user
 3. Upload the hands.txt file, click on Submite  button and wait.
+
+In hand.txt file from Task there Player ONE wins in 376 hands
 
 ## Authentication
 Is based on laravel/ui

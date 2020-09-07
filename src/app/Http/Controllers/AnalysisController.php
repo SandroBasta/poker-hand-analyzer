@@ -64,18 +64,20 @@ class AnalysisController extends Controller
         ]);
 
         Round::create([
-                'cards'    => $json,
-                'winner'   => $playerCards['winner'],
-                'rank'     => $playerCards['rank']
-            ]);
+            'cards'  => $json,
+            'winner' => $playerCards['winner'],
+            'rank'   => $playerCards['rank']
+        ]);
     }
 
     /**
      * @return Application|Factory|View
-     * Now we have easy job just count number of winner rows  where is player 1
+     * Here we will just take wins of player one
      */
-    public function show(){
-        $count = Round::where('winner',1)->count();
-        return view('show',['count' => $count]);
+    public function show()
+    {
+        $playersOneWins = Round::where('winner', 1)->count();
+        $playersTwoWins = Round::where('winner', 2)->count();
+        return view('show', compact('playersOneWins','playersTwoWins'));
     }
 }

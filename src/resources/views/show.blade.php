@@ -11,16 +11,22 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                            @if (isset($count))
-                                <h3 class="font-weight-bold"> Player ONE wins: {{$count}} times</h3>
-                            @else
-                                <h3 class="font-weight-bold"> There is no records. Sorry try again.</h3>
-                            @endif
-                            <a href="{{route('home')}}">
-                                <button type="button" class="btn btn-primary">
-                                    {{ __('Back') }}
-                                </button>
-                            </a>
+                        @if (isset($playersOneWins))
+                            <h3 class="font-weight-light">
+                                 <i class="fa fa-user fa-lg" aria-hidden="true"> </i> Player 1 wins in {{$playersOneWins}}
+                                hands!</h3>
+                            <h3 class="font-weight-light">
+                                 <i class="fa fa-user fa-lg" aria-hidden="true"></i> Player 2 wins in {{$playersTwoWins}}
+                                hands!</h3>
+                        @else
+                            <h3 class="font-weight-bold"> There is no records. Sorry try again.</h3>
+                        @endif
+                            <br/>
+                        <a href="{{route('home')}}">
+                            <button type="button" class="btn btn-primary">
+                                {{ __('Back') }}
+                            </button>
+                        </a>
                     </div>
                 </div>
             </div>
